@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Resto.MainPage"
+             xmlns:viewmodel="clr-namespace:Resto.ViewModel"
+             x:DataType="viewmodel:MainViewModel"
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="{StaticResource Primary}"
+             FlowDirection="LeftToRight">
+    <Grid RowDefinitions="1.5*,*,*">
+        <VerticalStackLayout Spacing="5" Margin="0,50,0,0">
+            <Frame WidthRequest="100"
+                   HeightRequest="100"
+                   CornerRadius="100">
+                <Image Source="dotnet_bot" Aspect="AspectFill" />
+            </Frame>
+            <Label Text="Food Bank"
+                   TextColor="{StaticResource Secondary}"
+                   FontSize="32"
+                   HorizontalTextAlignment="Center"
+                   FontFamily="PBold"/>
+            <Label Text="Special &amp; Delicious Food"
+                   TextColor="{StaticResource Tertiary}" 
+                   HorizontalTextAlignment="Center"
+                   FontSize="15"/>
+        </VerticalStackLayout>
+
+        <VerticalStackLayout Grid.Row="1"
+                             Spacing="15">
+            <Button Text="Log In"
+                    Command="{Binding SignInPageCommand}"
+                    BackgroundColor="{StaticResource Accent}"
+                    TextColor="{StaticResource Primary}"
+                    WidthRequest="200"
+                    HeightRequest="50"
+                    CornerRadius="50"
+                    FontFamily="PBold"
+                    FontSize="18"/>
+            <Button Text="Sign Up"
+                    Command="{Binding SignUpPageCommand}"
+                    BackgroundColor="{StaticResource Secondary}"
+                    TextColor="{StaticResource Primary}"
+                    WidthRequest="200"
+                    HeightRequest="50"
+                    CornerRadius="50"
+                    FontFamily="PBold"
+                    FontSize="18"/>
+            
+        </VerticalStackLayout>
+
+        <Frame Grid.Row="2"
+               BackgroundColor="{StaticResource Accent}"
+               Padding="0"
+               Margin="20,0"
+               HeightRequest="210"
+               BorderColor="{StaticResource Accent}"
+               CornerRadius="20">
+            <Grid ColumnDefinitions="*,*">
+                <Path Data="m163,177c0,0 -4,290 -4,290c0,0 511,2 511,2c15,0 24,-12 24,-12c-284,25 -282,-148 -282,-148c6,-83 49,-131 49,-131c0,0 -298,-1 -298,-1z" 
+                      Fill="{StaticResource Accent}"
+                      Aspect="UniformToFill" Grid.ColumnSpan="2"/>
+                <Path Data="m165,179c0,0 -3,288 -3,288l513,1c16,0 28,-29 28,-29c-290,19 -272,-132 -272,-132c4,-80 51,-129 52,-129c1,0 -318,1 -318,1z" 
+                      Fill="{StaticResource Secondary}"
+                      Aspect="UniformToFill" Grid.ColumnSpan="2"
+                      ZIndex="-1"/>
+                <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center" Spacing="0">
+                    <Label Text="15%" TextColor="{StaticResource Secondary}" FontSize="50" FontFamily="PBold"/>
+                    <Label Text="Discount" TextColor="{StaticResource Secondary}" FontSize="30" FontFamily="PBold"/>
+                    <Label Text="From Our Store" TextColor="{StaticResource Secondary}" FontSize="15" FontFamily="PLight"/>
+                </VerticalStackLayout>
+                <Image ZIndex="-2" Grid.Column="1" Source="dotnet_bot" Aspect="AspectFill" />
+            </Grid>
+        </Frame>
+    </Grid>
+
+</ContentPage>

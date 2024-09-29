@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Resto.Views.HomePage"
+             xmlns:viewmodel="clr-namespace:Resto.ViewModel"
+             Title="HomePage"
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="{StaticResource Primary}"
+             FlowDirection="LeftToRight">
+    <Grid RowDefinitions="*, 2*">
+        <Border StrokeShape="RoundRectangle 0, 0, 30,30"
+                Opacity="0.5" BackgroundColor="{StaticResource Primary}"
+                StrokeThickness="0">
+            <Image Source="dotnet_bot" Aspect="AspectFill" BackgroundColor="White" />
+        </Border>
+        <Grid>
+            <Grid Margin="30" VerticalOptions="Start">
+                <Label FontFamily="Solid"
+                       Text="{x:Static viewmodel:Solid.ArrowLeft}"
+                       FontSize="30"
+                       TextColor="{StaticResource Tertiary}"
+                       HorizontalOptions="Start"/>
+                <Label FontFamily="Solid"
+                       Text="{x:Static viewmodel:Solid.AlignJustify}"
+                       FontSize="30"
+                       TextColor="{StaticResource Tertiary}"
+                       HorizontalOptions="End"/>
+            </Grid>
+            <Label Text="Different &#10; Kind of Food" TextColor="{StaticResource Secondary}" 
+                   FontFamily="PBold" FontSize="35" Margin="15" VerticalOptions="End" HorizontalTextAlignment="Center"/>
+        </Grid>
+    </Grid>
+
+</ContentPage>
