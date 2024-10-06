@@ -16,6 +16,7 @@ namespace Resto.ViewModel
 		[ICommand]
 		async void SignUpPage()
 		{
+
 			await Shell.Current.GoToAsync(nameof(SignUpPage));
 		}
 	}

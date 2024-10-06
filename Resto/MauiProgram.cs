@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 using Resto.ViewModel;
+using Resto.Views;
 
 namespace Resto
 {
@@ -25,8 +26,22 @@ namespace Resto
 					fonts.AddFont("FontSolid.otf", "Solid");
 				});
 
+
+
+
+
 			builder.Services.AddSingleton<MainPage>();
 			builder.Services.AddSingleton<MainViewModel>();
+
+			builder.Services.AddSingleton<SignInPage>();
+			builder.Services.AddSingleton<SigninViewModel>();
+
+			builder.Services.AddSingleton<SignUpPage>();
+			builder.Services.AddSingleton<SignupViewModel>();
+
+			builder.Services.AddTransient<HomePage>();
+			builder.Services.AddTransient<HomeViewModel>();
+
 
 
 #if DEBUG

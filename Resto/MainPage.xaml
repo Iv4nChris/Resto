@@ -20,14 +20,14 @@
                    HorizontalTextAlignment="Center"
                    FontFamily="PBold"/>
             <Label Text="Special &amp; Delicious Food"
-                   TextColor="{StaticResource Tertiary}" 
+                   TextColor="{StaticResource Tertiary}"
                    HorizontalTextAlignment="Center"
                    FontSize="15"/>
         </VerticalStackLayout>
 
         <VerticalStackLayout Grid.Row="1"
                              Spacing="15">
-            <Button Text="Log In"
+            <Button Text="Sign in"
                     Command="{Binding SignInPageCommand}"
                     BackgroundColor="{StaticResource Accent}"
                     TextColor="{StaticResource Primary}"
@@ -36,7 +36,7 @@
                     CornerRadius="50"
                     FontFamily="PBold"
                     FontSize="18"/>
-            <Button Text="Sign Up"
+            <Button Text="Sign up"
                     Command="{Binding SignUpPageCommand}"
                     BackgroundColor="{StaticResource Secondary}"
                     TextColor="{StaticResource Primary}"

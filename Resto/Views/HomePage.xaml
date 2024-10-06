@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Resto.Views.HomePage"
              xmlns:viewmodel="clr-namespace:Resto.ViewModel"
+             x:DataType="viewmodel:HomeViewModel"
              Title="HomePage"
              Shell.NavBarIsVisible="False"
              BackgroundColor="{StaticResource Primary}"

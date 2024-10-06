@@ -2,11 +2,43 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Resto.Views.SignInPage"
+             Shell.NavBarIsVisible="False"
+             xmlns:vm="clr-namespace:Resto.ViewModel"
+             x:DataType="vm:SigninViewModel"
+             BackgroundColor="{StaticResource Primary}"
              Title="Sign In Page">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    <Grid RowDefinitions="1.5*, *, *" Padding="10">
+        <VerticalStackLayout Spacing="5" Margin="0,50,0,0">
+            <Frame WidthRequest="100" HeightRequest="100" CornerRadius="100">
+                <Image Source="dotnet_bot" Aspect="AspectFill" />
+            </Frame>
+            <Label Text="Sign in"
+                    TextColor="{StaticResource Secondary}"
+                    FontSize="32"
+                    HorizontalTextAlignment="Center"
+                    FontFamily="PBold"/>
+        </VerticalStackLayout>
+        <VerticalStackLayout Grid.Row="1" Spacing="10">
+            <Frame BorderColor="{StaticResource Tertiary}" Padding="10,5" WidthRequest="300" CornerRadius="10">
+                <Grid >
+                    <Label FontFamily="Solid" Text="{x:Static vm:Solid.User}" FontSize="25" Margin="0,0,0,3"  VerticalOptions="Center" />
+                    <vm:BorderlessEntry Placeholder="Enter User Name" Margin="25,0,0,0" FontSize="14" FontFamily="PRegular"/>
+                </Grid>
+            </Frame>
+            <Frame BorderColor="{StaticResource Tertiary}" Padding="10,5" WidthRequest="300" CornerRadius="10">
+                <Grid >
+                    <Label FontFamily="Solid" Text="{x:Static vm:Solid.Lock}" FontSize="25" Margin="0,0,0,3"  VerticalOptions="Center" />
+                    <vm:BorderlessEntry Placeholder="Enter Password" IsPassword="True" Margin="25,0,0,0" FontSize="14" FontFamily="PRegular"/>
+                </Grid>
+            </Frame>
+            <Button  Text="Sign In" BackgroundColor="{StaticResource Accent}" TextColor="{StaticResource Secondary}"
+                     FontSize="20" FontFamily="PBold" WidthRequest="300" Command="{Binding SignInCommand}"/>
+        </VerticalStackLayout>
+        <VerticalStackLayout Grid.Row="2" VerticalOptions="End" Spacing="10">
+
+            <Button  Text="Back" BackgroundColor="{StaticResource Secondary}" TextColor="{StaticResource Primary}"
+                     FontSize="20" FontFamily="PBold" WidthRequest="300"
+                     Command="{Binding BackCommand}"/>
+        </VerticalStackLayout>
+    </Grid>
 </ContentPage>

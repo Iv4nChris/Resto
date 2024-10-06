@@ -2,11 +2,80 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Resto.Views.SignUpPage"
+             xmlns:vm="clr-namespace:Resto.ViewModel"
+             BackgroundColor="{StaticResource Primary}"
+             Shell.NavBarIsVisible="False"
              Title="SignUpPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    <ContentPage.BindingContext>
+        <vm:SignupViewModel />
+    </ContentPage.BindingContext>
+    <Grid RowDefinitions="1.5*, 1.5*, *" Padding="10">
+        <VerticalStackLayout Spacing="5" Margin="0,50,0,0">
+            <Frame WidthRequest="100" HeightRequest="100" CornerRadius="100">
+                <Image Source="dotnet_bot" Aspect="AspectFill" />
+            </Frame>
+            <Label Text="Sign up" TextColor="{StaticResource Secondary}" FontSize="32" HorizontalTextAlignment="Center" FontFamily="PBold"/>
+        </VerticalStackLayout>
+        <VerticalStackLayout Grid.Row="1" Spacing="10" VerticalOptions="Center">
+            <StackLayout Spacing="10" IsVisible="{Binding IsFirstStepVisible}" x:Name="FirstStepLayout" TranslationX="0">
+                <Frame BorderColor="{StaticResource Tertiary}" Padding="10,5" WidthRequest="300" CornerRadius="10">
+                    <Grid >
+                        <Label FontFamily="Solid" Text="{x:Static vm:Solid.User}" FontSize="25" Margin="0,0,0,3"  VerticalOptions="Center" />
+                        <vm:BorderlessEntry Placeholder="Enter First Name"  Margin="25,0,0,0" FontSize="14" FontFamily="PRegular"/>
+                    </Grid>
+                </Frame>
+                <Frame BorderColor="{StaticResource Tertiary}" Padding="10,5" WidthRequest="300" CornerRadius="10">
+                    <Grid >
+                        <Label FontFamily="Solid" Text="{x:Static vm:Solid.User}" FontSize="25" Margin="0,0,0,3"  VerticalOptions="Center" />
+                        <vm:BorderlessEntry Placeholder="Enter Last Name" Margin="25,0,0,0" FontSize="14" FontFamily="PRegular"/>
+                    </Grid>
+                </Frame>
+                <Frame BorderColor="{StaticResource Tertiary}" Padding="10,5" WidthRequest="300" CornerRadius="10">
+                    <Grid >
+                        <Label FontFamily="Solid" Text="{x:Static vm:Solid.User}" FontSize="25" Margin="0,0,0,3"  VerticalOptions="Center" />
+                        <vm:BorderlessEntry Placeholder="Enter User Name" Margin="25,0,0,0" FontSize="14" FontFamily="PRegular"/>
+                    </Grid>
+                </Frame>
+                <Frame BorderColor="{StaticResource Tertiary}" Padding="10,5" WidthRequest="300" CornerRadius="10">
+                    <Grid >
+                        <Label FontFamily="Solid" Text="{x:Static vm:Solid.Phone}" FontSize="25" Margin="0,0,0,3"  VerticalOptions="Center" />
+                        <vm:BorderlessEntry Placeholder="Enter Contact Number" Margin="25,0,0,0" FontSize="14" FontFamily="PRegular"/>
+                    </Grid>
+                </Frame>
+                <Button  Text="Next" BackgroundColor="{StaticResource Accent}" TextColor="{StaticResource Secondary}"
+                         FontSize="20" FontFamily="PBold" WidthRequest="300" Command="{Binding GoToNextSlideCommand}" Clicked="OnNext_Clicked"/>
+            </StackLayout>
+            <StackLayout Spacing="10" IsVisible="{Binding IsSecondStepVisible}" VerticalOptions="Center" 
+                         x:Name="SecondStepLayout" TranslationX="1000">
+                <Frame BorderColor="{StaticResource Tertiary}" Padding="10,5" WidthRequest="300" CornerRadius="10">
+                    <Grid >
+                        <Label FontFamily="Solid" Text="{x:Static vm:Solid.Envelope}" FontSize="25" Margin="0,0,0,3"  VerticalOptions="Center" />
+                        <vm:BorderlessEntry Placeholder="Enter Email" Margin="25,0,0,0" FontSize="14" FontFamily="PRegular"/>
+                    </Grid>
+                </Frame>
+                <Frame BorderColor="{StaticResource Tertiary}" Padding="10,5" WidthRequest="300" CornerRadius="10">
+                    <Grid >
+                        <Label FontFamily="Solid" Text="{x:Static vm:Solid.Lock}" FontSize="25" Margin="0,0,0,3"  VerticalOptions="Center" />
+                        <vm:BorderlessEntry Placeholder="Enter Password" Margin="25,0,0,0" FontSize="14" FontFamily="PRegular"/>
+                    </Grid>
+                </Frame>
+                <Frame BorderColor="{StaticResource Tertiary}" Padding="10,5" WidthRequest="300" CornerRadius="10">
+                    <Grid >
+                        <Label FontFamily="Solid" Text="{x:Static vm:Solid.Lock}" FontSize="25" Margin="0,0,0,3"  VerticalOptions="Center" />
+                        <vm:BorderlessEntry Placeholder="Confirm Password" Margin="25,0,0,0" FontSize="14" FontFamily="PRegular"/>
+                    </Grid>
+                </Frame>
+                
+                <Button  Text="Previous" BackgroundColor="{StaticResource Accent}" TextColor="{StaticResource Secondary}"
+                     FontSize="20" FontFamily="PBold" WidthRequest="300" Command="{Binding PreviousSlideCommand}" Clicked="OnPrevious_Clicked"/>
+                <Button  Text="Sign In" BackgroundColor="{StaticResource Accent}" TextColor="{StaticResource Secondary}"
+                     FontSize="20" FontFamily="PBold" WidthRequest="300"/>
+            </StackLayout>
+        </VerticalStackLayout>
+        <VerticalStackLayout Grid.Row="2" VerticalOptions="End" Spacing="10">
+
+            <Button  Text="Back" BackgroundColor="{StaticResource Secondary}" TextColor="{StaticResource Primary}"
+                 FontSize="20" FontFamily="PBold" WidthRequest="300" Command="{Binding BackCommand}" />
+        </VerticalStackLayout>
+    </Grid>
 </ContentPage>
