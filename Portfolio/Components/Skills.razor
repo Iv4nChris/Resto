@@ -1,0 +1,12 @@
+﻿<section id="skills" class="skills-section section">
+    <h2>My Skills</h2>
+    <div class="skills-grid">
+        @foreach (var skill in SkillsList)
+        {
+            <div class="skill-item">
+                <i class="@skill.IconClass fa-2x"></i>
+                <span>@skill.Name</span>
+            </div>
+        }
+    </div>
+</section>

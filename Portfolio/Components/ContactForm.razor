@@ -1,0 +1,9 @@
+﻿<section id="contact" class="contact-section">
+    <h2>Contact Me</h2>
+    <EditForm Model="@contactModel" OnValidSubmit="HandleSubmit">
+        <InputText placeholder="Name" @bind-Value="contactModel.Name" class="input-field" />
+        <InputText placeholder="Email" @bind-Value="contactModel.Email" class="input-field" />
+        <InputTextArea placeholder="Message" @bind-Value="contactModel.Message" class="input-field" />
+        <button type="submit" class="btn-submit">Send</button>
+    </EditForm>
+</section>

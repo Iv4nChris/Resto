@@ -1,0 +1,19 @@
+﻿:root {
+    /* Light Theme Variables */
+    --background: #ffffff;
+    --text-color: #333333;
+    --primary-color: #007bff;
+    --button-text: #ffffff;
+    --card-bg: #f7f7f7;
+    --footer-bg: #eaeaea;
+}
+
+body.dark-mode {
+    /* Dark Theme Variables */
+    --background: #121212;
+    --text-color: #e0e0e0;
+    --primary-color: #0d6efd;
+    --button-text: #ffffff;
+    --card-bg: #1e1e1e;
+    --footer-bg: #1a1a1a;
+}

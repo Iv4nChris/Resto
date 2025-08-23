@@ -1,0 +1,14 @@
+﻿<section id="projects" class="projects-section section fade-in">
+    <h2>Projects</h2>
+    <div class="projects-grid">
+        @foreach (var project in ProjectsList)
+        {
+            <div class="project-card">
+                <img src="@project.ImageUrl" alt="@project.Title" class="project-image" />
+                <h3>@project.Title</h3>
+                <p>@project.Description</p>
+                <a href="@project.Link" target="_blank" class="btn-project">View</a>
+            </div>
+        }
+    </div>
+</section>

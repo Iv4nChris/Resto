@@ -1,0 +1,26 @@
+﻿@using Portfolio.Components
+<nav class="nav-menu">
+    <div class="nav-container">
+        <div class="logo">
+            <a href="#hero">Ivan Chris Cano</a>
+        </div>
+
+        <button class="nav-toggle" @onclick="ToggleMenu">
+            &#9776;  <!-- hamburger icon -->
+        </button>
+
+        <ul class="@NavMenuClass">
+            <li><Component /></li>
+            <li><a href="#" class="@GetNavButtonClass("hero")" @onclick="@(() => ScrollTo("hero"))" @onclick:preventDefault="true">Home</a></li>
+            <li><a href="#" class="@GetNavButtonClass("skills")" @onclick="@(() => ScrollTo("skills"))" @onclick:preventDefault="true">Skills</a></li>
+            <li><a href="#" class="@GetNavButtonClass("projects")" @onclick="@(() => ScrollTo("projects"))" @onclick:preventDefault="true">Projects</a></li>
+            <li><a href="#" class="@GetNavButtonClass("contact")" @onclick="@(() => ScrollTo("contact"))" @onclick:preventDefault="true">Contact</a></li>
+            @* <li class="mobile-darkmode"><DarkModeToggle /></li> *@
+            <li class="mobile-darkmode"><DarkModeToggle /></li>
+        </ul>
+
+        @* <div class="desktop-darkmode">
+            <DarkModeToggle />
+        </div> *@
+    </div>
+</nav>
